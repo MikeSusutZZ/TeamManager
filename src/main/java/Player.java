@@ -1,0 +1,70 @@
+import java.util.Random;
+
+public class Player {
+    int skill;
+    int consistency;
+    int playStyle;
+    int potential;
+    int number;
+
+    public Player(int skill, int consistency, int playStyle, int potential, int num) {
+        this.skill = skill;
+        this.consistency = consistency;
+        this.playStyle = playStyle;
+        this.potential = potential;
+        number = num;
+    }
+
+    public int play(int syn) {
+        // Generate a random number from 0 to consistency
+        int random = new Random().nextInt(consistency + 1);
+
+        // Return skill minus the random number
+        return skill - random - syn;
+    }
+
+    public int getPlayStyle() {
+        return playStyle;
+    }
+
+    public boolean retire() {
+        skill += potential;
+        potential -= new Random().nextInt(4) + 1;
+
+        if (skill < 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public int getConsistency() {
+        return consistency;
+    }
+
+    public void setConsistency(int consistency) {
+        this.consistency = consistency;
+    }
+
+    public int getSkill() {
+        return skill;
+    }
+
+    public int getPotential() {
+        return potential;
+    }
+
+
+    public void setPlayStyle(int playStyle) {
+        this.playStyle = playStyle;
+    }
+
+    public int getNum() {
+        return number;
+    }
+
+    public void setNum(int num) {
+        number = num;
+    }
+
+}
