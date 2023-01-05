@@ -74,7 +74,7 @@ public class Team {
                 bestScore += player.getPerformance();
             }
         }
-        System.out.println(bestScore / dif);
+        //System.out.println(bestScore / dif);
         
         for (int i = 0; i < dif; i++) {
             long score = 0;
@@ -89,7 +89,7 @@ public class Team {
                 for (PlayerRes player : res1) {
                     int thisOne = player.getPerformance();
                     score += thisOne;
-                     System.out.println(thisOne + ", " + score);
+                     //System.out.println(thisOne + ", " + score);
 
                 }
             }
