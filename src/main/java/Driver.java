@@ -74,7 +74,7 @@ public class Driver {
                     break;
                 case 2:
                     // setTeamToSavedPlayers();
-                    System.out.println("this doesnt work yet");
+                    System.out.println("this doesn't work yet");
                     break;
                 case 3:
                     Team a = Utility.whichTeam();

@@ -64,11 +64,11 @@ public class Team {
 
     public void findBestTeam() {
         long bestScore = 0;
-        Player[] bestLine = this.Roster();
+        Player[] bestLine = this.players;
         Random rand = new Random();
 
         for (int i = 0; i < dif; i++) {
-            PlayerRes[] res1 = Game.TeamResult(ActTeam());
+            PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(bestLine, 0, 5));
 
             for (PlayerRes player : res1) {
                 bestScore += player.getPerformance();
@@ -77,33 +77,35 @@ public class Team {
         //System.out.println(bestScore / dif);
         
         for (int i = 0; i < dif; i++) {
+            //set score to 0
             long score = 0;
-            Player[] curLine = Roster();
-
+            //current line is set to the list of players
+            Player[] curLine = players;
+            //The line of curLine is randomized
             Collections.shuffle(Arrays.asList(curLine), rand);
 
-
+            //gets the score for the current line
             for (int j = 0; j < dif; j++) {
-                PlayerRes[] res1 = Game.TeamResult(ActTeam());
+
+                PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(curLine, 0, 5));
 
                 for (PlayerRes player : res1) {
-                    int thisOne = player.getPerformance();
-                    score += thisOne;
-                     //System.out.println(thisOne + ", " + score);
+
+                    score += player.getPerformance();
 
                 }
             }
-            System.out.println("*team 84*" + (score / dif));
-            System.out.println(Utility.printTeam(bestLine));
-            System.out.println(Utility.printTeam(curLine));
-            System.out.println(score + " " + bestScore);
+            //System.out.println("*team 84*" + (score / dif));
+            //System.out.println(Utility.printTeam(bestLine));
+            //System.out.println(Utility.printTeam(curLine));
+            //System.out.println(score + " " + bestScore);
             if (score > bestScore) {
                 bestScore = score;
-                bestLine = curLine;
-                System.out.println("*team 88* the score was better than current best, lines changed");
+                bestLine = Arrays.copyOf(curLine, 7);
+                //System.out.println("*team 88* the score was better than current best, lines changed");
                 
             }
-            System.out.println(Utility.printTeam(bestLine));
+            //System.out.println(Utility.printTeam(bestLine));
         }
         setPlayers(bestLine);
     }
