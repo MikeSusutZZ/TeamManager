@@ -88,15 +88,23 @@ public class Game {
         int total2 = 0;
 
         // Loop through array1 and add each PlayerRes's performance to total1
-        for (PlayerRes player : array1) {
-            total1 += player.getPerformance();
-            
+        for (int i = 0; i < 5; i++) {
+            int line = switch (i) {
+                case 0 -> 3;
+                case 1, 2 -> 2;
+                default -> 1;
+            };
+            total1 += array1[i].getPerformance() * line;
         }
 
         // Loop through array2 and add each PlayerRes's performance to total2
-        for (PlayerRes player : array2) {
-            total2 += player.getPerformance();
-            
+        for (int i = 0; i < 5; i++) {
+            int line = switch (i) {
+                case 0 -> 3;
+                case 1, 2 -> 2;
+                default -> 1;
+            };
+            total2 += array2[i].getPerformance() * line;
         }
 
         // Print which array has the higher total performance
