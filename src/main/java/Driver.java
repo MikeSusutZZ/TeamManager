@@ -164,7 +164,7 @@ public class Driver {
                 "These stats are:\n" +
                 "* Their skill, which contributes directly to their teams success\n" +
                 "* a consistency factor that varies their skill each game\n" +
-                "* and a play style. There are 4 different play styles, and players will recieve a skill reduction if " +
+                "* and a play style. There are 4 different play styles, and players will receive a skill reduction if " +
                 "they are on a line with another player with the same play style\n");
     }
 
