@@ -60,6 +60,9 @@ public class Team {
     }
 
     public void findBestTeam() {
+
+        players[6] = Driver.createPlayer();
+
         long bestScore = 0;
         Player[] bestLine = this.players;
         Random rand = new Random();
