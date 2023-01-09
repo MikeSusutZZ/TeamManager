@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Made the different lines have a different levels of how much impact they make to their teams score">
+    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Adding the intro screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,14 +57,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/Nerd Shit/Personal Java Project zips/TeamManagerCore/Coaching"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Nerd Shit/Personal Java Project zips/TeamManagerCore/Coaching&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Nerd Shit\Personal Java Project zips\TeamManagerCore\Coaching\src\main\java" />
@@ -102,50 +103,58 @@
       <option name="project" value="LOCAL" />
       <updated>1673132899865</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding the intro screen">
+      <created>1673134572625</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673134572625</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="setting it up" />
     <MESSAGE value="Made the different lines have a different levels of how much impact they make to their teams score" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the different lines have a different levels of how much impact they make to their teams score" />
+    <MESSAGE value="Adding the intro screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the intro screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>96</line>
+          <line>93</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>97</line>
+          <line>94</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>105</line>
+          <line>102</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>91</line>
+          <line>88</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>102</line>
+          <line>99</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>95</line>
+          <line>92</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Team.java</url>
-          <line>76</line>
+          <line>73</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

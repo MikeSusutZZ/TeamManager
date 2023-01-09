@@ -55,8 +55,8 @@ public class Driver {
             System.out.println("3. Play a single match between the teams");
             System.out.println("4. Swap the position of 2 players on a team");
             System.out.println("5. View the players on a team");
-//            System.out.println("6. ");
-//            System.out.println("7. Save a team's players");
+            System.out.println("6. Replace a player on a team");
+            System.out.println("7. Introduction");
             System.out.print("> ");
             int input = Utility.checkForNum(ask);
             //this is the one that is breaking
@@ -98,11 +98,10 @@ public class Driver {
                     else System.out.println("Not a valid team name");
                     break;
                 case 6:
-                    System.out.println(teams[0].Roster()[0]);
-                    System.out.println(teams[1].Roster()[0]);
+                    Utility.whichTeam().replace(createPlayer(), ask);
                     break;
                 case 7:
-                    System.out.println("this doesn't work yet");
+                    intro();
                     break;
                 default:
                     System.out.println("Invalid input");
@@ -153,18 +152,18 @@ public class Driver {
     }
 
     public static void intro() {
-        System.out.println("You are the coach of a 'Codee' sport team! Your job is to change the lines of your players" +
-                " to find the best possible lines and defeat you opponent! \n" +
+        System.out.println("\nYou are the coach of a 'Codee' sport team! Your job is to change the lines of your players\n" +
+                "to find the best possible lines and defeat you opponent! \n\n" +
                 "The way a game of Codee works is as such:\n" +
                 "Teams are comprised of 7 players, but only the first 5 play in a game\n" +
                 "A team has 2 'lines' of 3 players. The first line plays twice as much as the second line.\n" +
-                " The Captain in spot 0 on your team and plays on both line 1 and 2, while spots 1-2 are only on line 1 and 3-4 are on line 2, \n" +
+                " The Captain in spot 0 on your team and plays on both line 1 and 2, while spots 1-2 \nare only on line 1 and 3-4 are on line 2, \n" +
                 "and lastly spots 5-6 are on the bench and don't play\n\n" +
                 "Your players have 3 stats, and can be identified by their player number.\n" +
                 "These stats are:\n" +
                 "* Their skill, which contributes directly to their teams success\n" +
                 "* a consistency factor that varies their skill each game\n" +
-                "* and a play style. There are 4 different play styles, and players will receive a skill reduction if " +
+                "* and a play style. There are 4 different play styles, and players will receive \na skill reduction if " +
                 "they are on a line with another player with the same play style\n");
     }
 

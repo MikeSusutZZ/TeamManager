@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 public class Team {
     // Define an array of Player objects
@@ -108,6 +105,22 @@ public class Team {
             //System.out.println(Utility.printTeam(bestLine));
         }
         setPlayers(bestLine);
+    }
+
+    public void replace(Player player, Scanner ask){
+        while (true) {
+            System.out.println("Which player do you want to remove from your team?\n> ");
+            System.out.println(Utility.printTeam(players));
+            int p = Utility.checkForNum(ask);
+            if (p == Driver.BACK) break;
+            if (p < 0 || p > 6) {
+                System.out.println("Not a valid input");
+            }
+            else {
+                players[p] = player;
+                break;
+            }
+        }
     }
 
 }
