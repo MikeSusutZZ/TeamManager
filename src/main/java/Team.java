@@ -60,55 +60,52 @@ public class Team {
     }
 
     public void findBestTeam() {
-
+        // Add a new player to the end of the players array
         players[6] = Driver.createPlayer();
 
+        // Initialize the best score and best team with the current players array
         long bestScore = 0;
         Player[] bestLine = this.players;
+        // Create a random number generator to shuffle the players array
         Random rand = new Random();
 
+        // Calculate the initial best score based on the current players array
         for (int i = 0; i < dif; i++) {
+            // Calculate the performance scores for each player in the current team
             PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(bestLine, 0, 5));
-
+            // Add the performance scores to the best score
             for (PlayerRes player : res1) {
                 bestScore += player.getPerformance();
             }
         }
-        //System.out.println(bestScore / dif);
-        
+
+        // Iterate through all possible combinations of players
         for (int i = 0; i < dif; i++) {
-            //set score to 0
+            // Initialize the score for the current combination of players
             long score = 0;
-            //current line is set to the list of players
+            // Shuffle the players array
             Player[] curLine = players;
-            //The line of curLine is randomized
             Collections.shuffle(Arrays.asList(curLine), rand);
 
-            //gets the score for the current line
+            // Calculate the score for the current combination of players
             for (int j = 0; j < dif; j++) {
-
+                // Calculate the performance scores for each player in the current team
                 PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(curLine, 0, 5));
-
+                // Add the performance scores to the current score
                 for (PlayerRes player : res1) {
-
                     score += player.getPerformance();
-
                 }
             }
-            //System.out.println("*team 84*" + (score / dif));
-            //System.out.println(Utility.printTeam(bestLine));
-            //System.out.println(Utility.printTeam(curLine));
-            //System.out.println(score + " " + bestScore);
+            // If the current score is better than the best score, update the best score and best team
             if (score > bestScore) {
                 bestScore = score;
                 bestLine = Arrays.copyOf(curLine, 7);
-                //System.out.println("*team 88* the score was better than current best, lines changed");
-                
             }
-            //System.out.println(Utility.printTeam(bestLine));
         }
+        // Set the players array to the best team of players
         setPlayers(bestLine);
     }
+
 
     public void replace(Player player, Scanner ask){
         while (true) {

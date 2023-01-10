@@ -12,7 +12,7 @@ public class Game {
               
         PlayerRes[] res1 = TeamResult(a.ActTeam());
         PlayerRes[] res2 = TeamResult(b.ActTeam());
-        match(res1, res2, a.getTeamName(), b.getTeamName());
+        announce(matchScore(res1, res2), a.getTeamName(), b.getTeamName());
         printPerformanceList(performance(res1, res2));
     }
 
@@ -82,7 +82,7 @@ public class Game {
         return syn;
     }
 
-    public static void match(PlayerRes[] array1, PlayerRes[] array2, String aName, String bName) {
+    public static int[] matchScore(PlayerRes[] array1, PlayerRes[] array2) {
         // Initialize the total variables to 0
         int total1 = 0;
         int total2 = 0;
@@ -107,25 +107,29 @@ public class Game {
             total2 += array2[i].getPerformance() * line;
         }
 
+        return new int[]{total1, total2};
+
+    }
+
+    public static void announce(int[] scores, String aName, String bName) {
         // Print which array has the higher total performance
-        System.out.println("* " + total1);
-        System.out.println("* " + total2);
-        if (total1 > total2) {
+        System.out.println("* " + scores[0]);
+        System.out.println("* " + scores[1]);
+        if (scores[0] > scores[1]) {
             System.out.println(aName + " Wins");
         } else {
             System.out.println(bName + " Wins");
         }
-
     }
 
     public static PlayerRes[] performance(PlayerRes[] array1, PlayerRes[] array2) {
         // Create a list to store the combined PlayerRes objects
         List<PlayerRes> combined = new ArrayList<>();
 
-        // Add all of the PlayerRes objects from array1 to the combined list
+        // Add all the PlayerRes objects from array1 to the combined list
         combined.addAll(Arrays.asList(array1));
 
-        // Add all of the PlayerRes objects from array2 to the combined list
+        // Add all the PlayerRes objects from array2 to the combined list
         combined.addAll(Arrays.asList(array2));
 
         // Sort the combined list in order of performance, using a comparator
@@ -150,7 +154,7 @@ public class Game {
     }
 
     /**
-     * Gets the overall performance of a match from all players
+     * Gets the overall performance of a matchScore from all players
      * 
      * @param players
      */
@@ -160,6 +164,16 @@ public class Game {
         }
         System.out.println("");
     }
-    
+
+    public static int[] tourGame(Team a, Team b) {
+        if (a.getBot()) a.findBestTeam();
+        if (b.getBot()) b.findBestTeam();
+
+        PlayerRes[] res1 = TeamResult(a.ActTeam());
+        PlayerRes[] res2 = TeamResult(b.ActTeam());
+        printPerformanceList(performance(res1, res2));
+        return matchScore(res1, res2);
+    }
+
     
 }

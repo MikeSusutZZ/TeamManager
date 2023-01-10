@@ -47,17 +47,19 @@ public class Driver {
 //        }
 
         boolean runProgram = true;
-
+        boolean tournamentOn = false;
         while (runProgram) {
-            System.out.println("Main Menu \nEnter the number of what you want" + " to do");
-            System.out.println("1. Set all teams to random players");
-            System.out.println("2. Set a team to a saved set of players (wip)");
-            System.out.println("3. Play a single match between the teams");
-            System.out.println("4. Swap the position of 2 players on a team");
-            System.out.println("5. View the players on a team");
-            System.out.println("6. Replace a player on a team");
-            System.out.println("7. Introduction");
-            System.out.print("> ");
+            if (!tournamentOn) {
+                System.out.println("Main Menu \nEnter the number of what you want" + " to do");
+                System.out.println("1. Set all teams to random players");
+                System.out.println("2. Set a team to a saved set of players (wip)");
+                System.out.println("3. Play a single match between the teams");
+                System.out.println("4. Swap the position of 2 players on a team");
+                System.out.println("5. View the players on a team");
+                System.out.println("6. Replace a player on a team");
+                System.out.println("7. Introduction");
+                System.out.print("> ");
+
             int input = Utility.checkForNum(ask);
             //this is the one that is breaking
 
@@ -103,9 +105,29 @@ public class Driver {
                 case 7:
                     intro();
                     break;
+                case 8:
+                    Tournament.beginTour(ask);
+                    tournamentOn = true;
+                    break;
                 default:
                     System.out.println("Invalid input");
                     Utility.inp();
+            }
+            }
+            else {
+                System.out.println("1. Play next match");
+                System.out.println("2. Swap players on a team");
+                System.out.println("3. Remove a player from a team");
+                System.out.println("4. View the players on a team");
+                System.out.println("5. View Records");
+
+                int input = Utility.checkForNum(ask);
+
+                switch (input) {
+                    case 1:
+
+                }
+
             }
             System.out.println("**************************************");
         }

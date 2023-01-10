@@ -27,15 +27,9 @@ public class Player {
         return playStyle;
     }
 
-    public boolean retire() {
+    public void age() {
         skill += potential;
         potential -= new Random().nextInt(4) + 1;
-
-        if (skill < 0) {
-            return false;
-        } else {
-            return true;
-        }
     }
 
     public int getConsistency() {
