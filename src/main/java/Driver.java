@@ -52,7 +52,7 @@ public class Driver {
             if (!tournamentOn) {
                 System.out.println("Main Menu \nEnter the number of what you want" + " to do");
                 System.out.println("1. Set all teams to random players");
-                System.out.println("2. Set a team to a saved set of players (wip)");
+                System.out.println("2. Save / Load");
                 System.out.println("3. Play a single match between the teams");
                 System.out.println("4. Swap the position of 2 players on a team");
                 System.out.println("5. View the players on a team");
@@ -76,7 +76,7 @@ public class Driver {
                     break;
                 case 2:
                     // setTeamToSavedPlayers();
-                    System.out.println("this doesn't work yet");
+                    Save.menu(ask);
                     break;
                 case 3:
                     Team a = Utility.whichTeam();
@@ -125,7 +125,22 @@ public class Driver {
 
                 switch (input) {
                     case 1:
-
+                         Tournament.nextMatch();
+                    case 2:
+                        Team c = Utility.whichTeam();
+                        if (c != null)
+                            Swapping.go(c.Roster(), ask);
+                        else System.out.println("Not a valid team name");
+                        // swapPlayersMenu(whichTeam().Roster(), ask);
+                        break;
+                    case 3:
+                        Utility.whichTeam().replace(createPlayer(), ask);
+                    case 4:
+                        Team d = Utility.whichTeam();
+                        if (d != null)
+                            System.out.println(Utility.printTeam(d.Roster()));
+                        else System.out.println("Not a valid team name");
+                        break;
                 }
 
             }
@@ -144,7 +159,7 @@ public class Driver {
     /**
      * makes a random player
      *
-     * @return
+     * @return a new player
      */
     public static Player createPlayer() {
 
