@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Tournament complete">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Made results come from players&#10;instead of playerres being a class of its own. This also allows me to have each player save their previous ratings, so players now show the average placement of the last 10 matches">
       <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PlayerRes.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676870632716</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Made results come from players&#10;instead of playerres being a class of its own. This also allows me to have each player save their previous ratings, so players now show the average placement of the last 10 matches">
+      <created>1676880653598</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676880653598</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +178,7 @@
     <MESSAGE value="Bots now replace the last player on the team before each game they play" />
     <MESSAGE value="Tournament started but not finihsed, still bugs, change the loop for schedule" />
     <MESSAGE value="Tournament complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tournament complete" />
+    <MESSAGE value="Made results come from players&#10;instead of playerres being a class of its own. This also allows me to have each player save their previous ratings, so players now show the average placement of the last 10 matches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made results come from players&#10;instead of playerres being a class of its own. This also allows me to have each player save their previous ratings, so players now show the average placement of the last 10 matches" />
   </component>
 </project>

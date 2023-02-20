@@ -88,7 +88,7 @@ public class Player {
             total += score;
         }
         if (history.size() != 0)
-        return total / history.size();
+        return (total * 10 / history.size()) / 10f;
         else return 0;
     }
 }
