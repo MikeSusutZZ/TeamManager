@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Bots now replace the last player on the team before each game they play">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Save.java" afterDir="false" />
+    <list default="true" id="e4381501-8a5d-4b7e-a26d-967e06dfc59c" name="Changes" comment="Tournament started but not finihsed, still bugs, change the loop for schedule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PlayerRes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PlayerRes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tournament.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +68,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/School Stuff/OO coding/Lab01 for real&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/Nerd Shit/Personal Java Project zips/TeamManagerCore/Coaching&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -125,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673295139401</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tournament started but not finihsed, still bugs, change the loop for schedule">
+      <created>1673501471441</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673501471441</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +157,7 @@
     <MESSAGE value="Adding the intro screen" />
     <MESSAGE value="Added the ability to replace a player with a random player" />
     <MESSAGE value="Bots now replace the last player on the team before each game they play" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bots now replace the last player on the team before each game they play" />
+    <MESSAGE value="Tournament started but not finihsed, still bugs, change the loop for schedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tournament started but not finihsed, still bugs, change the loop for schedule" />
   </component>
 </project>

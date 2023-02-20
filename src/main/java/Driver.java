@@ -1,4 +1,9 @@
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -9,6 +14,8 @@ public class Driver {
     public final static int BACK = 2345678;
 
     public static Team[] teams;
+
+    public static boolean tournamentOn = false;
 
     public static void main(String[] args) {
         Scanner ask = new Scanner(System.in);
@@ -38,7 +45,7 @@ public class Driver {
                 teams[i] = new Team(name, bott);
         }
         for (int i = 0; i < teams.length; i++) {
-            teams[i].setPlayers(initTeam());
+            teams[i].setPlayers(initTeam(teams[i]));
         }
 
 //        for (int i = 0; i < teams.length; i++) {
@@ -47,7 +54,7 @@ public class Driver {
 //        }
 
         boolean runProgram = true;
-        boolean tournamentOn = false;
+
         while (runProgram) {
             if (!tournamentOn) {
                 System.out.println("Main Menu \nEnter the number of what you want" + " to do");
@@ -70,13 +77,13 @@ public class Driver {
                     break;
                 case 1:
                     for (int i = 0; i < teams.length; i++) {
-                        teams[i].setPlayers(initTeam());
+                        teams[i].setPlayers(initTeam(teams[i]));
                     }
 
                     break;
                 case 2:
                     // setTeamToSavedPlayers();
-                    Save.menu(ask);
+                    //Save.menu(ask);
                     break;
                 case 3:
                     Team a = Utility.whichTeam();
@@ -100,7 +107,8 @@ public class Driver {
                     else System.out.println("Not a valid team name");
                     break;
                 case 6:
-                    Utility.whichTeam().replace(createPlayer(), ask);
+                    Team thisOne = Utility.whichTeam();
+                    thisOne.replace(createPlayer(thisOne), ask);
                     break;
                 case 7:
                     intro();
@@ -120,12 +128,14 @@ public class Driver {
                 System.out.println("3. Remove a player from a team");
                 System.out.println("4. View the players on a team");
                 System.out.println("5. View Records");
+                System.out.print("> ");
 
                 int input = Utility.checkForNum(ask);
 
                 switch (input) {
                     case 1:
                          Tournament.nextMatch();
+                         break;
                     case 2:
                         Team c = Utility.whichTeam();
                         if (c != null)
@@ -134,13 +144,19 @@ public class Driver {
                         // swapPlayersMenu(whichTeam().Roster(), ask);
                         break;
                     case 3:
-                        Utility.whichTeam().replace(createPlayer(), ask);
+                        Team thisOne = Utility.whichTeam();
+                        if (thisOne != null){
+                        thisOne.replace(createPlayer(thisOne), ask);}
+                        else System.out.println("Not a valid team name");
+                        break;
                     case 4:
                         Team d = Utility.whichTeam();
                         if (d != null)
                             System.out.println(Utility.printTeam(d.Roster()));
                         else System.out.println("Not a valid team name");
                         break;
+                    case 5:
+                        System.out.println(Tournament.recordString());
                 }
 
             }
@@ -161,7 +177,7 @@ public class Driver {
      *
      * @return a new player
      */
-    public static Player createPlayer() {
+    public static Player createPlayer(Team t) {
 
         // Create a random number generator
         Random rand = new Random();
@@ -173,17 +189,17 @@ public class Driver {
                 rand.nextInt(20) + 1, // consistency (random from 1 to 20)
                 rand.nextInt(4) + 1, // play style (random from 1 to 4)
                 rand.nextInt(31) - 15, // potential (random from -15 to 15)
-                playerNumber); // sets the player's number
+                playerNumber, t); // sets the player's number
         playerNumber++; // increase the count of players
 
         // Return the players array
         return player;
     }
 
-    public static Player[] initTeam() {
+    public static Player[] initTeam(Team t) {
         Player[] team = new Player[7];
         for (int i = 0; i < 7; i++) {
-            team[i] = createPlayer();
+            team[i] = createPlayer(t);
         }
         return (team);
     }

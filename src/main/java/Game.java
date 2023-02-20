@@ -24,7 +24,7 @@ public class Game {
         for (int i = 0; i < players.length; i++) {
             // Create a new PlayerRes object for each player, using the play and getName
             // methods
-            playerResults[i] = new PlayerRes(players[i].play(synPlayer(i, players)), players[i].getNum());
+            playerResults[i] = new PlayerRes(players[i].play(synPlayer(i, players)), players[i].getNum(), players[i].getTeam());
         }
 
         // Return the playerResults array
@@ -113,8 +113,8 @@ public class Game {
 
     public static void announce(int[] scores, String aName, String bName) {
         // Print which array has the higher total performance
-        System.out.println("* " + scores[0]);
-        System.out.println("* " + scores[1]);
+        System.out.println("* " + scores[0] / 100);
+        System.out.println("* " + scores[1] / 100);
         if (scores[0] > scores[1]) {
             System.out.println(aName + " Wins");
         } else {
@@ -160,7 +160,7 @@ public class Game {
      */
     public static void printPerformanceList(PlayerRes[] players) {
         for (PlayerRes player : players) {
-            System.out.print("#" + player.getNum() + ", ");
+            System.out.print(player.getTeam().getTeamName().substring(0, 1) +  "#" + player.getNum() + ", ");
         }
         System.out.println("");
     }

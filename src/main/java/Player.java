@@ -6,13 +6,15 @@ public class Player {
     int playStyle;
     int potential;
     int number;
+    Team team;
 
-    public Player(int skill, int consistency, int playStyle, int potential, int num) {
+    public Player(int skill, int consistency, int playStyle, int potential, int num, Team thisTeam) {
         this.skill = skill;
         this.consistency = consistency;
         this.playStyle = playStyle;
         this.potential = potential;
         number = num;
+        team = thisTeam;
     }
 
     public int play(int syn) {
@@ -61,4 +63,7 @@ public class Player {
         number = num;
     }
 
+    public Team getTeam() {
+        return team;
+    }
 }

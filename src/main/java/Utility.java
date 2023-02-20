@@ -25,8 +25,7 @@ public class Utility {
     /**
      * Whenever you need to determine which team an action will be done on, this is
      * the method
-     * 
-     * @param ask
+     *
      * @return
      */
     @SuppressWarnings("resource")
@@ -106,7 +105,7 @@ public class Utility {
 
         String str = "  ||  ";
         for (int i = 0; i < team.length; i++) {
-            str += (i + ". #" + team[i].getNum() + "  ||  ");
+            str += (i + ". #" + team[i].getNum() + " " + (char)(team[i].getPlayStyle() + 64) +  "  ||  ");
         }
         return str;
     }

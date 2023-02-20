@@ -4,9 +4,6 @@ public class Team {
     // Define an array of Player objects
     private Player[] players = new Player[7];
 
-    // Define an ArrayList of strings to store the team's record
-    private ArrayList<String> record;
-
     // Define a String to store the team's name
     private final String teamName;
 
@@ -31,11 +28,6 @@ public class Team {
         this.players = players;
     }
 
-    // Define a method to add a record to the team's record
-    public void addRecord(String record) {
-        this.record.add(record);
-    }
-
     // Define a method to get the team's name
     public String getTeamName() {
         return this.teamName;
@@ -50,18 +42,13 @@ public class Team {
         return Arrays.copyOfRange(players, 0, 5);
     }
 
-    // Define a method to get the team's record
-    public ArrayList<String> getRecord() {
-        return this.record;
-    }
-
     public boolean getBot() {
         return botOrNot;
     }
 
     public void findBestTeam() {
         // Add a new player to the end of the players array
-        players[6] = Driver.createPlayer();
+        players[6] = Driver.createPlayer(this);
 
         // Initialize the best score and best team with the current players array
         long bestScore = 0;
@@ -109,8 +96,9 @@ public class Team {
 
     public void replace(Player player, Scanner ask){
         while (true) {
-            System.out.println("Which player do you want to remove from your team?\n> ");
+            System.out.println("Which player do you want to remove from your team?");
             System.out.println(Utility.printTeam(players));
+            System.out.print("> ");
             int p = Utility.checkForNum(ask);
             if (p == Driver.BACK) break;
             if (p < 0 || p > 6) {
@@ -123,4 +111,8 @@ public class Team {
         }
     }
 
+
+    public int getDif() {
+        return dif;
+    }
 }
