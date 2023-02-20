@@ -105,7 +105,7 @@ public class Utility {
 
         String str = "  ||  ";
         for (int i = 0; i < team.length; i++) {
-            str += (i + ". #" + team[i].getNum() + " " + (char)(team[i].getPlayStyle() + 64) +  "  ||  ");
+            str += (i + ". #" + team[i].getNum() + " " + (char)(team[i].getPlayStyle() + 64) + " (" + team[i].historyAvg() +  ")  ||  ");
         }
         return str;
     }

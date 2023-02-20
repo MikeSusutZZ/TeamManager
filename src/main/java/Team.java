@@ -59,9 +59,9 @@ public class Team {
         // Calculate the initial best score based on the current players array
         for (int i = 0; i < dif; i++) {
             // Calculate the performance scores for each player in the current team
-            PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(bestLine, 0, 5));
+            Player[] res1 = Game.TeamResult(Arrays.copyOfRange(bestLine, 0, 5));
             // Add the performance scores to the best score
-            for (PlayerRes player : res1) {
+            for (Player player : res1) {
                 bestScore += player.getPerformance();
             }
         }
@@ -77,9 +77,9 @@ public class Team {
             // Calculate the score for the current combination of players
             for (int j = 0; j < dif; j++) {
                 // Calculate the performance scores for each player in the current team
-                PlayerRes[] res1 = Game.TeamResult(Arrays.copyOfRange(curLine, 0, 5));
+                Player[] res1 = Game.TeamResult(Arrays.copyOfRange(curLine, 0, 5));
                 // Add the performance scores to the current score
-                for (PlayerRes player : res1) {
+                for (Player player : res1) {
                     score += player.getPerformance();
                 }
             }

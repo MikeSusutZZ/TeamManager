@@ -10,25 +10,21 @@ public class Game {
         if (a.getBot()) a.findBestTeam();
         if (b.getBot()) b.findBestTeam();
               
-        PlayerRes[] res1 = TeamResult(a.ActTeam());
-        PlayerRes[] res2 = TeamResult(b.ActTeam());
+        Player[] res1 = TeamResult(a.ActTeam());
+        Player[] res2 = TeamResult(b.ActTeam());
         announce(matchScore(res1, res2), a.getTeamName(), b.getTeamName());
         printPerformanceList(performance(res1, res2));
     }
 
-    public static PlayerRes[] TeamResult(Player[] players) {
-        // Create an array of PlayerRes objects with the same size as the players array
-        PlayerRes[] playerResults = new PlayerRes[players.length];
+    public static Player[] TeamResult(Player[] players) {
 
         // Loop through the players array
         for (int i = 0; i < players.length; i++) {
-            // Create a new PlayerRes object for each player, using the play and getName
-            // methods
-            playerResults[i] = new PlayerRes(players[i].play(synPlayer(i, players)), players[i].getNum(), players[i].getTeam());
+            players[i].play(synPlayer(i, players));
         }
 
         // Return the playerResults array
-        return playerResults;
+        return players;
     }
 
     public static boolean checkSyn(Player player1, Player player2) {
@@ -82,7 +78,7 @@ public class Game {
         return syn;
     }
 
-    public static int[] matchScore(PlayerRes[] array1, PlayerRes[] array2) {
+    public static int[] matchScore(Player[] array1, Player[] array2) {
         // Initialize the total variables to 0
         int total1 = 0;
         int total2 = 0;
@@ -122,9 +118,9 @@ public class Game {
         }
     }
 
-    public static PlayerRes[] performance(PlayerRes[] array1, PlayerRes[] array2) {
+    public static Player[] performance(Player[] array1, Player[] array2) {
         // Create a list to store the combined PlayerRes objects
-        List<PlayerRes> combined = new ArrayList<>();
+        List<Player> combined = new ArrayList<>();
 
         // Add all the PlayerRes objects from array1 to the combined list
         combined.addAll(Arrays.asList(array1));
@@ -133,20 +129,19 @@ public class Game {
         combined.addAll(Arrays.asList(array2));
 
         // Sort the combined list in order of performance, using a comparator
-        combined.sort(new Comparator<PlayerRes>() {
+        combined.sort(new Comparator<Player>() {
             @Override
-            public int compare(PlayerRes player1, PlayerRes player2) {
+            public int compare(Player player1, Player player2) {
                 return player2.getPerformance() - player1.getPerformance();
             }
         });
 
-        // Create a new array to store the sorted PlayerRes objects, with a size of 10
-        PlayerRes[] sorted = new PlayerRes[10];
+        // Create a new array to store the sorted Player objects, with a size of 10
+        Player[] sorted = new Player[10];
 
-        // Copy the first 10 PlayerRes objects from the combined list to the sorted
-        // array
         for (int i = 0; i < 10; i++) {
             sorted[i] = combined.get(i);
+            sorted[i].updateHistory(i);
         }
 
         // Return the sorted array
@@ -158,8 +153,8 @@ public class Game {
      * 
      * @param players
      */
-    public static void printPerformanceList(PlayerRes[] players) {
-        for (PlayerRes player : players) {
+    public static void printPerformanceList(Player[] players) {
+        for (Player player : players) {
             System.out.print(player.getTeam().getTeamName().substring(0, 1) +  "#" + player.getNum() + ", ");
         }
         System.out.println("");
@@ -169,8 +164,8 @@ public class Game {
         if (a.getBot()) a.findBestTeam();
         if (b.getBot()) b.findBestTeam();
 
-        PlayerRes[] res1 = TeamResult(a.ActTeam());
-        PlayerRes[] res2 = TeamResult(b.ActTeam());
+        Player[] res1 = TeamResult(a.ActTeam());
+        Player[] res2 = TeamResult(b.ActTeam());
         printPerformanceList(performance(res1, res2));
         return matchScore(res1, res2);
     }

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Player {
@@ -7,6 +8,8 @@ public class Player {
     int potential;
     int number;
     Team team;
+    ArrayList<Integer> history;
+    int performance;
 
     public Player(int skill, int consistency, int playStyle, int potential, int num, Team thisTeam) {
         this.skill = skill;
@@ -15,14 +18,19 @@ public class Player {
         this.potential = potential;
         number = num;
         team = thisTeam;
+        history = new ArrayList<Integer>();
     }
 
-    public int play(int syn) {
+    public int getPerformance() {
+        return performance;
+    }
+
+    public void play(int syn) {
         // Generate a random number from 0 to consistency
         int random = new Random().nextInt(consistency + 1);
 
         // Return skill minus the random number
-        return skill - random - syn;
+        performance = skill - random - syn;
     }
 
     public int getPlayStyle() {
@@ -65,5 +73,22 @@ public class Player {
 
     public Team getTeam() {
         return team;
+    }
+
+    public void updateHistory(int game){
+        history.add(10 - game);
+        if(history.size() > 10){
+            history.remove(0);
+        }
+    }
+
+    public float historyAvg(){
+        int total = 0;
+        for(Integer score: history){
+            total += score;
+        }
+        if (history.size() != 0)
+        return total / history.size();
+        else return 0;
     }
 }
